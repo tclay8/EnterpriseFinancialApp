@@ -1,0 +1,40 @@
+﻿@model EnterpriseFinancialApp.Models.Invite
+
+<div class="content-wrapper">
+
+    <section class="content">
+        @{
+            ViewBag.Title = "Invite";
+        }
+
+        <h2>Invite</h2>
+
+        @using (Html.BeginForm("Invite", "Households", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(model => model.HouseholdId)
+            <h4>
+                Invite a member your Household. Enter the information below.
+            </h4>
+            <hr />
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                </div>
+            </div>
+
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" class="btn btn-default" value="Send" />
+                </div>
+            </div>
+        }
+
+    </section>
+
+</div>
+
