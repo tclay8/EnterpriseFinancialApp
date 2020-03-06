@@ -9,23 +9,23 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
-    <link href="~/Template/Content/all.min.css" rel="stylesheet" />
+    <link href="~/Template/Content/all.min.css" rel="stylesheet">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bbootstrap 4 -->
-    <link href="~/Template/Content/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="~/Template/Content/tempusdominus-bootstrap-4.min.css" rel="stylesheet">
     <!-- iCheck -->
-    <link href="~/Template/Content/icheck-bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Template/Content/icheck-bootstrap.min.css" rel="stylesheet">
     <!-- JQVMap -->
-    <link href="~/Template/Content/jqvmap.min.css" rel="stylesheet" />
+    <link href="~/Template/Content/jqvmap.min.css" rel="stylesheet">
     <!-- Theme style -->
-    <link href="~/Template/Content/adminlte.min.css" rel="stylesheet" />
+    <link href="~/Template/Content/adminlte.min.css" rel="stylesheet">
     <!-- overlayScrollbars -->
-    <link href="~/Template/Content/OverlayScrollbars.min.css" rel="stylesheet" />
+    <link href="~/Template/Content/OverlayScrollbars.min.css" rel="stylesheet">
     <!-- Daterange picker -->
-    <link href="~/Template/Content/daterangepicker.css" rel="stylesheet" />
+    <link href="~/Template/Content/daterangepicker.css" rel="stylesheet">
     <!-- summernote -->
-    <link href="~/Template/Content/summernote-bs4.css" rel="stylesheet" />
+    <link href="~/Template/Content/summernote-bs4.css" rel="stylesheet">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -191,9 +191,8 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+
+
     <!-- jQuery -->
     <script src="~/Template/Scripts/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
@@ -206,9 +205,6 @@
     <script src="~/Template/Scripts/Chart.min.js"></script>
     <!-- Sparkline -->
     <script src="~/Template/Scripts/sparkline.js"></script>
-    <!-- JQVMap -->
-    <script src="~/Template/Scripts/jquery.vmap.min.js"></script>
-    <script src="~/Template/Scripts/jquery.vmap.usa.js"></script>
     <!-- jQuery Knob Chart -->
     <script src="~/Template/Scripts/jquery.knob.min.js"></script>
     <!-- daterangepicker -->
@@ -226,5 +222,9 @@
     <script src="~/Template/Scripts/dashboard.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="~/Template/Scripts/demo.js"></script>
+    <script src="~/Template/Scripts/jquery.dataTables.min.js"></script>
+    <script>$('.table').DataTable();</script>
+
+    @RenderSection("scripts", required: false)
 </body>
 </html>

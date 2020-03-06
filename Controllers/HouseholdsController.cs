@@ -55,6 +55,7 @@ namespace EnterpriseFinancialApp.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 db.Households.Add(household);
                 db.SaveChanges();
 

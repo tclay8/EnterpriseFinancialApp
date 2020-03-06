@@ -41,7 +41,7 @@ namespace EnterpriseFinancialApp.Controllers
         // GET: Transactions/Create
         public ActionResult Create()
         {
-            ViewBag.AccountId = new SelectList(db.PersonalAccounts, "Id", "Name");
+            ViewBag.PersonalAccountId = new SelectList(db.PersonalAccounts, "Id", "Name");
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name");
             ViewBag.EnteredById = new SelectList(db.Users, "Id", "FirstName");
             return View();
@@ -52,7 +52,7 @@ namespace EnterpriseFinancialApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,AccountId,Description,Date,Amount,Type,Void,CategoryId,EnteredById,Reconciled,ReconciledAmount,IsDeleted")] Transaction transaction)
+        public ActionResult Create([Bind(Include = "Id,PersonalAccountId,Description,Date,Amount,Type,Void,CategoryId,EnteredById,Reconciled,ReconciledAmount,IsDeleted")] Transaction transaction)
         {
             if (ModelState.IsValid)
             {
@@ -61,7 +61,7 @@ namespace EnterpriseFinancialApp.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AccountId = new SelectList(db.PersonalAccounts, "Id", "Name", transaction.PersonalAccountId);
+            ViewBag.PersonalAccountId = new SelectList(db.PersonalAccounts, "Id", "Name", transaction.PersonalAccountId);
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", transaction.CategoryId);
             ViewBag.EnteredById = new SelectList(db.Users, "Id", "FirstName", transaction.EnteredById);
             return View(transaction);
@@ -79,7 +79,7 @@ namespace EnterpriseFinancialApp.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.AccountId = new SelectList(db.PersonalAccounts, "Id", "Name", transaction.PersonalAccountId);
+            ViewBag.PersonalAccountId = new SelectList(db.PersonalAccounts, "Id", "Name", transaction.PersonalAccountId);
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", transaction.CategoryId);
             ViewBag.EnteredById = new SelectList(db.Users, "Id", "FirstName", transaction.EnteredById);
             return View(transaction);
@@ -90,7 +90,7 @@ namespace EnterpriseFinancialApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,AccountId,Description,Date,Amount,Type,Void,CategoryId,EnteredById,Reconciled,ReconciledAmount,IsDeleted")] Transaction transaction)
+        public ActionResult Edit([Bind(Include = "Id,PersonalAccountId,Description,Date,Amount,Type,Void,CategoryId,EnteredById,Reconciled,ReconciledAmount,IsDeleted")] Transaction transaction)
         {
             if (ModelState.IsValid)
             {
@@ -98,7 +98,7 @@ namespace EnterpriseFinancialApp.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AccountId = new SelectList(db.PersonalAccounts, "Id", "Name", transaction.PersonalAccountId);
+            ViewBag.PersonalAccountId = new SelectList(db.PersonalAccounts, "Id", "Name", transaction.PersonalAccountId);
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", transaction.CategoryId);
             ViewBag.EnteredById = new SelectList(db.Users, "Id", "FirstName", transaction.EnteredById);
             return View(transaction);

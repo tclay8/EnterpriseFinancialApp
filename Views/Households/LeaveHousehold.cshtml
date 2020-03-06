@@ -1,7 +1,39 @@
-﻿
-@{
-    ViewBag.Title = "LeaveHousehold";
-}
+﻿@model EnterpriseFinancialApp.Models.Household
 
-<h2>LeaveHousehold</h2>
+<div class="content-wrapper">
 
+    <section class="content">
+        @{
+            ViewBag.Title = "Leave Household";
+        }
+
+        <h2>Leave Household</h2>
+
+        @using (Html.BeginForm("LeaveHousehold", "Households", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(model => model.HouseholdId)
+            <h4>
+                Are you sure you want to leave the Household?
+            </h4>
+            <hr />
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                </div>
+            </div>
+
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" class="btn btn-default" value="Leave" />
+                </div>
+            </div>
+        }
+
+    </section>
+
+</div>
